@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "lib": ["dom", "es2015"],
+    "strict": true
+  },
+  "files": [
+      "src/ts/index.ts",
+      "src/ts/models/User.ts"
+    ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
