@@ -81,120 +81,120 @@ var Everything = {
         }
     },
     view: function() {
-        return m("div",{class:"main-window"}, 
+        return m('div',{class:'main-window'}, 
         [
-            m("nav",  { class: "sidebar" }, 
+            m('nav',  { class: 'sidebar' }, 
                 [
-                    m("div#sidebar-collapse-title", { class: "sidebar-header" },
+                    m('div#sidebar-collapse-title', { class: 'sidebar-header' },
                         [
-                            m("h3", "Scores and Users" ),
-                            m("strong", "Max")
+                            m('h3', 'Scores and Users' ),
+                            m('strong', 'Max')
                         ]
                     ),
-                    m("ul", { class:"list-unstyled components" },
-                        m("li", { class: "list-unstyled components"}, [
-                            m("div#user-field-header",
+                    m('ul', { class:'list-unstyled components' },
+                        m('li', { class: 'list-unstyled components'}, [
+                            m('div#user-field-header',
                             [
-                                m("h8", "Enter a player name")
+                                m('h8', 'Enter a player name')
                             ]),
-                            m("input#new-user-field", {
-                                oninput: m.withAttr("value", this.setName),
-                                class: "input field-info",}, [
-                                m("i", {class: "fas fa-algin-left"}, ""),
-                                m("span", "Field")
+                            m('input#new-user-field', {
+                                oninput: m.withAttr('value', this.setName),
+                                class: 'input field-info',}, [
+                                m('i', {class: 'fas fa-algin-left'}, ''),
+                                m('span', 'Field')
                             ]),
-                            m("button#make-new-user", {
-                                onclick: m.withAttr("value", this.sendName),
-                                 class: "btn btn-info"}, [
-                                m("i", { class: "fas fa-align-left"}, ""),
-                                m("span", "Upload User")
-                            ]),m("div#user-field-header",
+                            m('button#make-new-user', {
+                                onclick: m.withAttr('value', this.sendName),
+                                 class: 'btn btn-info'}, [
+                                m('i', { class: 'fas fa-align-left'}, ''),
+                                m('span', 'Upload User')
+                            ]),m('div#user-field-header',
                             [
-                                m("h8", "============")
+                                m('h8', '============')
                             ]),
-                            m("div#user-field-header",
+                            m('div#user-field-header',
                             [
-                                m("h8", "Enter a user ID")
+                                m('h8', 'Enter a user ID')
                             ]),
-                            m("input#user-id-field", {
-                                oninput: m.withAttr("value", this.setID),
-                                class: "input field-info",}, [
-                                m("i", {class: "fas fa-algin-left"}, ""),
-                                m("span", "Field")
+                            m('input#user-id-field', {
+                                oninput: m.withAttr('value', this.setID),
+                                class: 'input field-info',}, [
+                                m('i', {class: 'fas fa-algin-left'}, ''),
+                                m('span', 'Field')
                             ]),
-                            m("button#get-user", {
-                                onclick: m.withAttr("value", this.sendGetID),
-                                 class: "btn btn-info"}, [
-                                m("i", { class: "fas fa-align-left"}, ""),
-                                m("span", "Get User by ID")
+                            m('button#get-user', {
+                                onclick: m.withAttr('value', this.sendGetID),
+                                 class: 'btn btn-info'}, [
+                                m('i', { class: 'fas fa-align-left'}, ''),
+                                m('span', 'Get User by ID')
                             ]),
-                            m("button#delete-user", {
-                                onclick: m.withAttr("value", this.sendDeleteID),
-                                 class: "btn btn-info"}, [
-                                m("i", { class: "fas fa-align-left"}, ""),
-                                m("span", "Delete user by ID")
-                            ]),m("div#user-field-header",
+                            m('button#delete-user', {
+                                onclick: m.withAttr('value', this.sendDeleteID),
+                                 class: 'btn btn-info'}, [
+                                m('i', { class: 'fas fa-align-left'}, ''),
+                                m('span', 'Delete user by ID')
+                            ]),m('div#user-field-header',
                             [
-                                m("h8", "============")
+                                m('h8', '============')
                             ]),
-                            m("div#user-field-header",
+                            m('div#user-field-header',
                             [
-                                m("h8", "Now enter a score")
+                                m('h8', 'Now enter a score')
                             ]),
-                            m("input#score-field", {
-                                oninput: m.withAttr("value", this.setScore),
-                                class: "input field-info",}, [
-                                m("i", {class: "fas fa-algin-left"}, ""),
-                                m("span", "Field")
+                            m('input#score-field', {
+                                oninput: m.withAttr('value', this.setScore),
+                                class: 'input field-info',}, [
+                                m('i', {class: 'fas fa-algin-left'}, ''),
+                                m('span', 'Field')
                             ]),
-                            m("button#get-score", {
-                                onclick: m.withAttr("value", this.uploadScore),
-                                 class: "btn btn-info"}, [
-                                m("i", { class: "fas fa-align-left"}, ""),
-                                m("span", "Upload Score")
+                            m('button#get-score', {
+                                onclick: m.withAttr('value', this.uploadScore),
+                                 class: 'btn btn-info'}, [
+                                m('i', { class: 'fas fa-align-left'}, ''),
+                                m('span', 'Upload Score')
                             ]),
-                            m("button#get-score", {
-                                onclick: m.withAttr("value", this.sendGetScore),
-                                 class: "btn btn-info"}, [
-                                m("i", { class: "fas fa-align-left"}, ""),
-                                m("span", "Get score by user ID")
+                            m('button#get-score', {
+                                onclick: m.withAttr('value', this.sendGetScore),
+                                 class: 'btn btn-info'}, [
+                                m('i', { class: 'fas fa-align-left'}, ''),
+                                m('span', 'Get score by user ID')
                             ]),
-                            m("button#delete-score", {
-                                onclick: m.withAttr("value", this.sendDeleteScore),
-                                 class: "btn btn-info"}, [
-                                m("i", { class: "fas fa-align-left"}, ""),
-                                m("span", "Delete score by user ID")
-                            ]),m("div#user-field-header",
+                            m('button#delete-score', {
+                                onclick: m.withAttr('value', this.sendDeleteScore),
+                                 class: 'btn btn-info'}, [
+                                m('i', { class: 'fas fa-align-left'}, ''),
+                                m('span', 'Delete score by user ID')
+                            ]),m('div#user-field-header',
                             [
-                                m("h8", "============")
+                                m('h8', '============')
                             ]),
-                            m("div#user-id-header",
+                            m('div#user-id-header',
                             [
-                                m("h8", "ID:")
+                                m('h8', 'ID:')
                             ]),
-                            m("div#user-id",
+                            m('div#user-id',
                             [
-                                m("h8", user.id)
+                                m('h8', user.id)
                             ]),
-                            m("div#user-name-header",
+                            m('div#user-name-header',
                             [
-                                m("h8", "Name:")
+                                m('h8', 'Name:')
                             ]),
-                            m("div#user-name",
+                            m('div#user-name',
                             [
-                                m("h8", user.name)
+                                m('h8', user.name)
                             ]),
-                            m("div#highest-score-header",
+                            m('div#highest-score-header',
                             [
-                                m("h8", "Highest Score:")
+                                m('h8', 'Highest Score:')
                             ]),
-                            m("div#highest-score",
+                            m('div#highest-score',
                             [
-                                m("h8", score.score)
+                                m('h8', score.score)
                             ]),
-                            m("div#highest-score",
+                            m('div#highest-score',
                             [
-                                m("h8", message)
+                                m('h8', message)
                             ])
 
                         ])
@@ -202,22 +202,19 @@ var Everything = {
                     )
                 ]
             ),
-            m("main",
-                m ("div", { class: "container-fluid"}, [
-                    m("nav", { class: "navbar navbar-expand-lg navbar-light bg-light mobile-only"},[
-                        m("div", { class: "container-fluid"} ,
-                            m("button#sidebar-collapse", { class: "btn btn-info"}, [
-                                m("i", { class: "fas fa-align-left"}, ""),
-                                m("span", "toggle sidebar")
+            m('main',
+                m ('div', { class: 'container-fluid'}, [
+                    m('nav', { class: 'navbar navbar-expand-lg navbar-light bg-light mobile-only'},[
+                        m('div', { class: 'container-fluid'} ,
+                            m('button#sidebar-collapse', { class: 'btn btn-info'}, [
+                                m('i', { class: 'fas fa-align-left'}, ''),
+                                m('span', 'toggle sidebar')
                             ])
                         )
                     ] )
 
                 ])
-
             )
-          
-
         ]
     );
     }
