@@ -91,7 +91,7 @@ var Everything = {
                             m('strong', 'Max')
                         ]
                     ),
-                    m('ul', { class:'list-unstyled components' },
+                    m('ul', { class: 'list-unstyled components' },
                         m('li', { class: 'list-unstyled components'}, [
                             m('div#user-field-header',
                             [
@@ -100,7 +100,7 @@ var Everything = {
                             m('input#new-user-field', {
                                 oninput: m.withAttr('value', this.setName),
                                 class: 'input field-info',}, [
-                                m('i', {class: 'fas fa-algin-left'}, ''),
+                                m('i', { class: 'fas fa-algin-left'}, ''),
                                 m('span', 'Field')
                             ]),
                             m('button#make-new-user', {
@@ -108,7 +108,7 @@ var Everything = {
                                  class: 'btn btn-info'}, [
                                 m('i', { class: 'fas fa-align-left'}, ''),
                                 m('span', 'Upload User')
-                            ]),m('div#user-field-header',
+                            ]), m('div#user-field-header',
                             [
                                 m('h8', '============')
                             ]),
@@ -118,7 +118,7 @@ var Everything = {
                             ]),
                             m('input#user-id-field', {
                                 oninput: m.withAttr('value', this.setID),
-                                class: 'input field-info',}, [
+                                class: 'input field-info', }, [
                                 m('i', {class: 'fas fa-algin-left'}, ''),
                                 m('span', 'Field')
                             ]),
@@ -133,7 +133,7 @@ var Everything = {
                                  class: 'btn btn-info'}, [
                                 m('i', { class: 'fas fa-align-left'}, ''),
                                 m('span', 'Delete user by ID')
-                            ]),m('div#user-field-header',
+                            ]), m('div#user-field-header',
                             [
                                 m('h8', '============')
                             ]),
@@ -143,7 +143,7 @@ var Everything = {
                             ]),
                             m('input#score-field', {
                                 oninput: m.withAttr('value', this.setScore),
-                                class: 'input field-info',}, [
+                                class: 'input field-info', }, [
                                 m('i', {class: 'fas fa-algin-left'}, ''),
                                 m('span', 'Field')
                             ]),
@@ -164,7 +164,7 @@ var Everything = {
                                  class: 'btn btn-info'}, [
                                 m('i', { class: 'fas fa-align-left'}, ''),
                                 m('span', 'Delete score by user ID')
-                            ]),m('div#user-field-header',
+                            ]), m('div#user-field-header',
                             [
                                 m('h8', '============')
                             ]),
@@ -197,14 +197,13 @@ var Everything = {
                                 m('h8', message)
                             ])
 
-                        ])
-                
+                        ])                
                     )
                 ]
             ),
             m('main',
                 m ('div', { class: 'container-fluid'}, [
-                    m('nav', { class: 'navbar navbar-expand-lg navbar-light bg-light mobile-only'},[
+                    m('nav', { class: 'navbar navbar-expand-lg navbar-light bg-light mobile-only'}, [
                         m('div', { class: 'container-fluid'} ,
                             m('button#sidebar-collapse', { class: 'btn btn-info'}, [
                                 m('i', { class: 'fas fa-align-left'}, ''),
@@ -218,32 +217,31 @@ var Everything = {
         ]
     );
     }
-}
+};
 
 
 m.mount(document.body, Everything);
 
 $(document).ready( () => {
- 
     $('#sidebar-collapse').on('click',  () => {
             $('.sidebar').toggleClass('active');
-        })
+        });
 
     $('#new-user-field').on('input',  () => {
        // m.withAttr("value", userNameField.setName);
-        //console.info(userNameField.name);
-    })
+        // console.info(userNameField.name);
+    });
 
     $('#make-new-user').on('click',  () => {
        // let test: User = new User(0, userNameField.name);
-        //test.postUser();
-        //Make new user with name?
-          //$('.sidebar').toggleClass('active');
-        })
-    })
+        // test.postUser();
+        // Make new user with name?
+          // $('.sidebar').toggleClass('active');
+        });
+    });
 
     window.addEventListener('resize', () => {
-       if(window.innerHeight < window.innerWidth){
+       if (window.innerHeight < window.innerWidth) {
            $('.sidebar').toggleClass('active');
        }
 });

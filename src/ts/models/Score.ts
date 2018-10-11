@@ -7,54 +7,54 @@ import m from 'mithril';
  */
 export class Score {
     public id = 0;
-    public score = 0
-    public status = "ok";
-    private siteURL = "http://localhost:3000/score/";
-    constructor( status: string, id: number, score: number = 0){ 
+    public score = 0;
+    public status = 'ok';
+    private siteURL = 'http://localhost:3000/score/';
+    constructor( status: string, id: number, score: number = 0 ){
         this.status = status;
        this.id = id;
        this.score = score;
-    };
+    }
 
-    getScore(){
+    getScore() {
         m.request({
-            method: "GET",
-            url: this.siteURL + this.id.toString(),           
+            method: 'GET',
+            url: this.siteURL + this.id.toString(),         
             withCredentials: false,
         })
-        .then((result : any) => {    
+        .then((result: any) => {
             this.status = result.status;
         this.id = result.id;
         this.score = result.score;
-        })
+        });
     }
 
-    postScore(){
-        let  score: Score = new Score("ok", 0);
+    postScore() {
+        const  score: Score = new Score('ok', 0);
         m.request({
-            method: "POST",
-            url: this.siteURL + "",
-            data: {score: this.score, id: this.id},           
+            method: 'POST',
+            url: this.siteURL + '',
+            data: {score: this.score, id: this.id},       
             withCredentials: false,
         })
-        .then((result : any) => {
+        .then((result: any) => {
             score.status = result.status;
             score.score = result.score;
             score.id = result.id;
-        })
+        });
         return score;
     }
 
-    deleteScore(id : number){
-        let resultString : string = "";
+    deleteScore(id: number){
+        let resultString : string = '';
         this.id = id;
         m.request({
-            method: "DELETE",
+            method: 'DELETE',
             url: this.siteURL + this.id.toString(),
             withCredentials: false,
-        }).then((result:any) => {
+        }).then((result: any) => {
             resultString = result.status;
-        })
+        });
         return resultString;
     }
 }
