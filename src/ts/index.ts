@@ -31,7 +31,7 @@ const Everything = {
     sendName: function(value: string) {
         const test: User = new User('ok', 0, nameFieldValue);
         user = test.postUser();
-    },    
+    },
     setID: function(value: number) {
         idFieldValue = value;
     },
@@ -58,7 +58,7 @@ const Everything = {
     uploadScore: function(value: number) {
         const fieldsScore: Score = new Score('ok', idFieldValue, scoreFieldValue);
         const apiScore: Score = fieldsScore.postScore();
-        score = apiScore;        
+        score = apiScore;
     },
     sendGetScore: function(value: number) {
         score = new Score('ok', idFieldValue);
@@ -71,7 +71,7 @@ const Everything = {
         const test: Score = new Score('ok', idFieldValue);
         test.deleteScore(idFieldValue);
         if (test.status === 'succes') {
-            message = 'Score deleted.'
+            message = 'Score deleted.';
         } else {
             message = 'Could not find score for user';
         }
