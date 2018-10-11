@@ -46,7 +46,7 @@ export class Score {
     }
 
     deleteScore(id: number) {
-        let resultString: string = '';
+        let resultString = '';
         this.id = id;
         m.request({
             method: 'DELETE',

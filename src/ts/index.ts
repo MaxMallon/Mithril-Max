@@ -29,60 +29,57 @@ const Everything = {
         nameFieldValue = value;
     },
     sendName: function(value: string) {
-        let test: User = new User('ok', 0, nameFieldValue);
+        const test: User = new User('ok', 0, nameFieldValue);
         user = test.postUser();
     },    
-    setID: function(value: number){
+    setID: function(value: number) {
         idFieldValue = value;
     },
     sendGetID: function(value: number) {
         user = new User('ok', idFieldValue);
         user.getUser();
-        if (user.status == 'failure') {
+        if (user.status === 'failure') {
             user.name = '[No such user]';
             message = 'No user with id' + user.id.toString();
         }
     },
     sendDeleteID: function(value: number) {
-        let test: User = new User('ok', idFieldValue);
+        const test: User = new User('ok', idFieldValue);
         test.deleteUser(idFieldValue);
-        if (test.status == 'succes') {
-            message = 'User deleted.'
-        }
-        else{
-            message = 'Could not find user'
+        if (test.status === 'succes') {
+            message = 'User deleted.';
+        } else {
+            message = 'Could not find user';
         }
     },
-    setScore:function(value: number) {
+    setScore: function(value: number) {
         scoreFieldValue = value;
     },
-    uploadScore:function(value: number) {
-        let fieldsScore: Score = new Score('ok',idFieldValue, scoreFieldValue);
-        let apiScore: Score = fieldsScore.postScore();
-        score = apiScore;
-        
+    uploadScore: function(value: number) {
+        const fieldsScore: Score = new Score('ok', idFieldValue, scoreFieldValue);
+        const apiScore: Score = fieldsScore.postScore();
+        score = apiScore;        
     },
-    sendGetScore:function(value: number) {
+    sendGetScore: function(value: number) {
         score = new Score('ok', idFieldValue);
         score.getScore();
-        if (score.status == 'failure') {
+        if (score.status === 'failure') {
             score.score = 0;
         }
-    },    
-    sendDeleteScore:function(value: number) {
-        let test: Score = new Score('ok', idFieldValue);
+    },
+    sendDeleteScore: function(value: number) {
+        const test: Score = new Score('ok', idFieldValue);
         test.deleteScore(idFieldValue);
-        if (test.status == 'succes') {
+        if (test.status === 'succes') {
             message = 'Score deleted.'
-        }
-        else{
-            message = 'Could not find score for user'
+        } else {
+            message = 'Could not find score for user';
         }
     },
     view: function() {
         return m('div', { class: 'main-window'},
         [
-            m('nav', { class: 'sidebar' }, 
+            m('nav', { class: 'sidebar' },
                 [
                     m('div#sidebar-collapse-title', { class: 'sidebar-header' },
                         [
@@ -98,7 +95,7 @@ const Everything = {
                             ]),
                             m('input#new-user-field', {
                                 oninput: m.withAttr('value', this.setName),
-                                class: 'input field-info',}, [
+                                class: 'input field-info', }, [
                                 m('i', { class: 'fas fa-algin-left'}, ''),
                                 m('span', 'Field')
                             ]),
