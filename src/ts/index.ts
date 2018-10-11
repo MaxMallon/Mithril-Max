@@ -3,87 +3,86 @@
  *
  * This software is distributed under the terms of the
  * GNU General Public Licence version 3 (GPL) version 3,
- * copied verbatim in the file "LICENSE"
+ * copied verbatim in the file 'LICENSE'
  */
 
 import m, { Vnode } from 'mithril';
 import '../scss/main.scss';
-import  $ from 'jquery';
+import $ from 'jquery';
 import 'popper.js';
 import 'bootstrap';
-import '../scss/sidebar.scss'
+import '../scss/sidebar.scss';
 
 import { Score } from './models/Score';
 
-import {User} from "./models/User";
-    
-var user = new User("ok", 0);
-var score = new Score("ok", 0, 0);
-var nameFieldValue = "";
-var idFieldValue = 0;
-var scoreFieldValue = 0;
-var message = "";
+import {User} from './models/User';
+let user = new User('ok', 0);
+let score = new Score('ok', 0, 0);
+let nameFieldValue = '';
+let idFieldValue = 0;
+let scoreFieldValue = 0;
+let message = '';
 
 
-var Everything = {
-    setName: function(value : string){
+const Everything = {
+    setName: function(value: string) {
         nameFieldValue = value;
     },
-    sendName: function(value : string){
-        let test: User = new User("ok", 0, nameFieldValue);
+    sendName: function(value: string) {
+        let test: User = new User('ok', 0, nameFieldValue);
         user = test.postUser();
     },    
-    setID: function(value : number){
+    setID: function(value: number){
         idFieldValue = value;
     },
-    sendGetID: function(value : number){
-        user = new User("ok", idFieldValue);
+    sendGetID: function(value: number) {
+        user = new User('ok', idFieldValue);
         user.getUser();
-        if (user.status == "failure"){
-            user.name = "[No such user]";
-            message = "No user with id" + user.id.toString();
+        if (user.status == 'failure') {
+            user.name = '[No such user]';
+            message = 'No user with id' + user.id.toString();
         }
     },
-    sendDeleteID: function(value : number){
-        let test: User = new User("ok", idFieldValue);
+    sendDeleteID: function(value: number) {
+        let test: User = new User('ok', idFieldValue);
         test.deleteUser(idFieldValue);
-        if (test.status == "succes"){
-            message = "User deleted."
+        if (test.status == 'succes') {
+            message = 'User deleted.'
         }
         else{
-            message = "Could not find user"
+            message = 'Could not find user'
         }
     },
-    setScore:function(value : number){
+    setScore:function(value: number) {
         scoreFieldValue = value;
     },
-    uploadScore:function(value : number){
-        let fieldsScore: Score = new Score("ok",idFieldValue, scoreFieldValue);
+    uploadScore:function(value: number) {
+        let fieldsScore: Score = new Score('ok',idFieldValue, scoreFieldValue);
         let apiScore: Score = fieldsScore.postScore();
         score = apiScore;
         
     },
-    sendGetScore:function(value : number){
-        score = new Score("ok", idFieldValue);
+    sendGetScore:function(value: number) {
+        score = new Score('ok', idFieldValue);
         score.getScore();
-        if (score.status == "failure"){
+        if (score.status == 'failure') {
             score.score = 0;
         }
     },    
-    sendDeleteScore:function(value : number){
-        let test: Score = new Score("ok", idFieldValue);
+    sendDeleteScore:function(value: number) {
+        let test: Score = new Score('ok', idFieldValue);
         test.deleteScore(idFieldValue);
-        if (test.status == "succes"){
-            message = "Score deleted."
+        if (test.status == 'succes') {
+            message = 'Score deleted.'
         }
         else{
-            message = "Could not find score for user"
+            message = 'Could not find score for user'
         }
     },
     view: function() {
-        return m('div',{class:'main-window'}, 
+        return m('div', { class: 'main-window'},
         [
-            m('nav',  { class: 'sidebar' }, 
+            m('nav', { class: 'sidebar' }, 
                 [
                     m('div#sidebar-collapse-title', { class: 'sidebar-header' },
                         [
@@ -197,7 +196,7 @@ var Everything = {
                                 m('h8', message)
                             ])
 
-                        ])                
+                        ])
                     )
                 ]
             ),
@@ -228,7 +227,7 @@ $(document).ready( () => {
         });
 
     $('#new-user-field').on('input',  () => {
-       // m.withAttr("value", userNameField.setName);
+       // m.withAttr('value', userNameField.setName);
         // console.info(userNameField.name);
     });
 

@@ -10,11 +10,11 @@ export class User {
     public name = '';
     public id = 0;
     private siteURL = 'http://localhost:3000/user/';
-    constructor(status: string, id: number, name: string = ''){ 
+    constructor( status: string, id: number, name: string = '' ) {
         this.status = status;
         this.name = name;
         this.id = id;
-    };
+    }
 
 getUser() {
     m.request({
@@ -23,7 +23,6 @@ getUser() {
         withCredentials: false,
     })
     .then((result: any) => {
-        console.info(result);
         this.status = result.status;
         this.id = result.id;
         this.name = result.name;
@@ -46,8 +45,8 @@ getUser() {
         return user;
     }
 
-    deleteUser(id: number){
-        let resultString : string = '';
+    deleteUser(id: number) {
+        let resultString = '';
         this.id = id;
         m.request({
             method: 'DELETE',
