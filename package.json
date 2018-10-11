@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack src/ts/index.ts  -d --watch & http-server -p 8080",
-    "test": "./node_modules/tslint/bin/tslint -c ./.tslint.json ./src/ts/*.ts ./src/ts/models/*.ts ./src/ts/views/*.ts"
+    "test": "./node_modules/.bin/tslint -c ./.tslint.json ./src/ts/*.ts ./src/ts/models/*.ts ./src/ts/views/*.ts"
   },
   "author": "Amsterdam University of Applied Sciences",
   "license": "GPL3",
